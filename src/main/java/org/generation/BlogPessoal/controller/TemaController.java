@@ -5,7 +5,7 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.generation.BlogPessoal.model.Tema;
-import org.generation.BlogPessoal.repository.temaRepository;
+import org.generation.BlogPessoal.repository.TemaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,7 +26,7 @@ import org.springframework.web.server.ResponseStatusException;
 public class TemaController {
 
 	@Autowired
-	private temaRepository repository;
+	private TemaRepository repository;
 
 	@GetMapping("/all")
 	public ResponseEntity<List<Tema>> findAll() {

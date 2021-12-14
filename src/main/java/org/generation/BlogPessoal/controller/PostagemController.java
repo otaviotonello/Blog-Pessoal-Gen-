@@ -3,7 +3,7 @@ package org.generation.BlogPessoal.controller;
 import java.util.List;
 
 import org.generation.BlogPessoal.model.Postagem;
-import org.generation.BlogPessoal.repository.postagemRepository;
+import org.generation.BlogPessoal.repository.PostagemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,10 +23,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class PostagemController {
 	
 	@Autowired
-	private postagemRepository repository;
+	private PostagemRepository repository;
 	
 	@GetMapping("/all")
-	public ResponseEntity<List<Postagem>> GetAll() {
+	public ResponseEntity<List<Postagem>> getAll() {
 		return ResponseEntity.ok(repository.findAll());
 	}
 	
