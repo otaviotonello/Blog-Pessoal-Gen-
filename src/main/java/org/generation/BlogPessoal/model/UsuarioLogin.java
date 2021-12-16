@@ -1,7 +1,10 @@
 package org.generation.BlogPessoal.model;
 
+import javax.validation.constraints.NotBlank;
+
 public class UsuarioLogin {
 
+	@NotBlank
 	private String nome;
 	
 	private String usuario;
@@ -9,6 +12,15 @@ public class UsuarioLogin {
 	private String senha;
 	
 	private String token; 
+	
+	public UsuarioLogin() {}
+	
+	public UsuarioLogin(String nome, String usuario, String senha, String token) {
+		this.nome = nome;
+		this.usuario = usuario;
+		this.senha = senha;
+		this.token = token;
+	}
 
 	public String getNome() {
 		return nome;
