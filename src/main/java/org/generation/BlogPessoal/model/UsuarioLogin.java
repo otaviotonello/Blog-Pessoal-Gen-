@@ -1,16 +1,22 @@
 package org.generation.BlogPessoal.model;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 public class UsuarioLogin {
 
 	@NotBlank
 	private String nome;
 	
+	@NotBlank
+	@Size(min= 3, max= 15)
 	private String usuario;
 	
+	@NotBlank
+	@Size(min= 3, max= 50)
 	private String senha;
 	
+	@NotBlank
 	private String token; 
 	
 	public UsuarioLogin() {}
