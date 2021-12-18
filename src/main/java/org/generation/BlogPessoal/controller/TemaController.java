@@ -39,9 +39,10 @@ public class TemaController {
 				.orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Id não existe"));
 	}
 
-	@GetMapping("/tema/{tema}")
-	public ResponseEntity<List<Tema>> getByTema(@PathVariable String descricao) {
-		return ResponseEntity.ok(repository.findAllByDescricaoContainingIgnoreCase(descricao));
+	@GetMapping("/{nome}")
+	public ResponseEntity<Tema> findByNome(@PathVariable(value = "nome") String nome) {
+		return repository.findByNome(nome).map(resp -> ResponseEntity.status(200).body(resp))
+				.orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Nome não existe"));
 	}
 
 	@PostMapping("/save")

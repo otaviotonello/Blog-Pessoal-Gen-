@@ -17,7 +17,7 @@ public class UsuarioService {
 	@Autowired
 	private UsuarioRepository repository;
 
-	public Usuario CadastrarUsuario(Usuario usuario) {
+	public Usuario cadastrarUsuario(Usuario usuario) {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
 		String senhaEncoder = encoder.encode(usuario.getSenha());
@@ -26,7 +26,7 @@ public class UsuarioService {
 		return repository.save(usuario);
 	}
 
-	public Optional<UsuarioLogin> Logar(Optional<UsuarioLogin> user) {
+	public Optional<UsuarioLogin> logar(Optional<UsuarioLogin> user) {
 
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		Optional<Usuario> usuario = repository.findByUsuario(user.get().getUsuario());

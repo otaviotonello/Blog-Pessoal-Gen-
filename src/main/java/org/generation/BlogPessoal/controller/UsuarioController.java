@@ -21,16 +21,17 @@ public class UsuarioController {
 
 	@Autowired
 	private UsuarioService usuarioService;
-
+	
 	@PostMapping("/logar")
-	public ResponseEntity<UsuarioLogin> Autentication(@RequestBody Optional<UsuarioLogin> user) {
-		return usuarioService.Logar(user).map(resp -> ResponseEntity.ok(resp))
+	public ResponseEntity<UsuarioLogin> postLogin(@RequestBody Optional<UsuarioLogin> user) {
+		return usuarioService.logar(user).map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
 	}
 
 	@PostMapping("/cadastrar")
-	public ResponseEntity<Usuario> Post(@RequestBody Usuario usuario) {
+	public ResponseEntity<Usuario> postCadastro(@RequestBody Usuario usuario) {
 		return ResponseEntity.status(HttpStatus.CREATED)
-				.body(usuarioService.CadastrarUsuario(usuario));
+				.body(usuarioService.cadastrarUsuario(usuario));
 	}
+	
 }
