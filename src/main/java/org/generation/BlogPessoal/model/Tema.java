@@ -29,7 +29,7 @@ public class Tema {
 	@NotBlank
 	private String descricao;
 	
-	@OneToMany(mappedBy = "tema", cascade = CascadeType.REMOVE)
+	@OneToMany(mappedBy = "tema")
 	@JsonIgnoreProperties("tema")
 	private List<Postagem> postagem;
 

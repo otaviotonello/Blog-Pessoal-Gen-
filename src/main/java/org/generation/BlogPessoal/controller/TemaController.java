@@ -33,13 +33,13 @@ public class TemaController {
 		return ResponseEntity.ok(repository.findAll());
 	}
 
-	@GetMapping("/{id}")
+	@GetMapping("/id/{id}")
 	public ResponseEntity<Tema> findById(@PathVariable(value = "id") long id) {
 		return repository.findById(id).map(resp -> ResponseEntity.status(200).body(resp))
 				.orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Id não existe"));
 	}
 
-	@GetMapping("/{nome}")
+	@GetMapping("/nome/{nome}")
 	public ResponseEntity<Tema> findByNome(@PathVariable(value = "nome") String nome) {
 		return repository.findByNome(nome).map(resp -> ResponseEntity.status(200).body(resp))
 				.orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Nome não existe"));
@@ -55,7 +55,7 @@ public class TemaController {
 		return ResponseEntity.status(HttpStatus.OK).body(repository.save(tema));
 	}
 
-	@DeleteMapping("/{id}")
+	@DeleteMapping("/id/{id}")
 	public void delete(@PathVariable(value = "id") long id) {
 		repository.deleteById(id);
 	}

@@ -38,7 +38,7 @@ public class Postagem {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date date = new java.sql.Date(System.currentTimeMillis());
 	
-	@ManyToOne(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
+	@ManyToOne
 	@JoinColumn(name = "fk_tema")
 	@JsonIgnoreProperties("postagem")
 	private Tema tema;
