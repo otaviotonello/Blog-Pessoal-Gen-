@@ -25,7 +25,7 @@ public class SwaggerConfig {
 								.name("Generation Brasil")
 								.url("http://brazil.generation.org/"))
 						.contact (new Contact()
-								.name("GitHub Otavio Tonello")
+								.name("Otavio Tonello")
 								.url("https://github.com/otaviotonello")
 								.email("otaviotonello0102@gmail.com")))
 					.externalDocs (new ExternalDocumentation()
