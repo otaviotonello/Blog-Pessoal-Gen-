@@ -13,6 +13,8 @@ public class UsuarioLogin {
 	private String senha;
 
 	private String token;
+	
+	private String tipo;
 
 	//Getters and Setters
 
@@ -63,4 +65,13 @@ public class UsuarioLogin {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+	
 }
